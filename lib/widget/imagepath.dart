@@ -16,4 +16,9 @@ class AppImage {
   static String image9 = 'assets/images/9.png';
   static String image10 = 'assets/images/10.png';
   static String image11 = 'assets/images/11.png';
+  static String articles = 'assets/svg/Articles.svg';
+  static String home = 'assets/svg/Home.svg';
+  static String menu = 'assets/svg/Menu.svg';
+  static String search = 'assets/svg/Search.svg';
+  static String plus = 'assets/svg/plus.svg';
 }

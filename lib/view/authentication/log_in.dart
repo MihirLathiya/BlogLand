@@ -1,5 +1,6 @@
 import 'package:blog_land/controller/passwordController.dart';
 import 'package:blog_land/view/authentication/authentication_screen.dart';
+import 'package:blog_land/view/bottom_bar.dart';
 import 'package:blog_land/widget/app_color.dart';
 import 'package:blog_land/widget/button.dart';
 import 'package:blog_land/widget/common_text.dart';
@@ -94,6 +95,7 @@ class _LogInViewState extends State<LogInView> {
                 height: 60 * widget.size!,
                 onPress: () {
                   if (userName.text.isNotEmpty && password.text.isNotEmpty) {
+                    Get.offAll(() => AppBottomBar());
                     commonSnackBar('Login Successfully',
                         snackBarBackGroundColor: AppColor.mainColor);
                   } else {

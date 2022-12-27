@@ -1,10 +1,12 @@
 import 'package:blog_land/view/authentication/authentication_screen.dart';
+import 'package:blog_land/view/bottom_bar.dart';
 import 'package:blog_land/widget/app_color.dart';
 import 'package:blog_land/widget/button.dart';
 import 'package:blog_land/widget/common_text.dart';
 import 'package:blog_land/widget/imagepath.dart';
 import 'package:blog_land/widget/snackbar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignUpView extends StatefulWidget {
   final double? size;
@@ -99,6 +101,8 @@ class _SignUpViewState extends State<SignUpView> {
                   if (userName.text.isNotEmpty &&
                       password.text.isNotEmpty &&
                       email.text.isNotEmpty) {
+                    Get.offAll(() => AppBottomBar());
+
                     commonSnackBar('SignUp Successfully',
                         snackBarBackGroundColor: AppColor.mainColor);
                   } else {
