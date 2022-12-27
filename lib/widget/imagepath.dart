@@ -21,4 +21,5 @@ class AppImage {
   static String menu = 'assets/svg/Menu.svg';
   static String search = 'assets/svg/Search.svg';
   static String plus = 'assets/svg/plus.svg';
+  static String notification = 'assets/svg/notification.svg';
 }
