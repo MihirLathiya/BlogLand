@@ -1,5 +1,8 @@
 import 'package:blog_land/widget/common_text.dart';
+import 'package:blog_land/widget/imagepath.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class CommonButton extends StatelessWidget {
   final height, width, radius, textSize;
@@ -42,4 +45,18 @@ class CommonButton extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget backButton() {
+  return IconButton(
+    splashRadius: 20,
+    onPressed: () {
+      Get.back();
+    },
+    icon: SvgPicture.asset(
+      AppImage.backButton,
+      height: 24,
+      width: 24,
+    ),
+  );
 }

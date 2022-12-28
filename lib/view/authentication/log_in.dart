@@ -1,4 +1,5 @@
 import 'package:blog_land/controller/passwordController.dart';
+import 'package:blog_land/prefrence_manager/prefrence_manager.dart';
 import 'package:blog_land/view/authentication/authentication_screen.dart';
 import 'package:blog_land/view/bottom_bar.dart';
 import 'package:blog_land/widget/app_color.dart';
@@ -96,6 +97,7 @@ class _LogInViewState extends State<LogInView> {
                 onPress: () {
                   if (userName.text.isNotEmpty && password.text.isNotEmpty) {
                     Get.offAll(() => AppBottomBar());
+                    PreferenceManager.setEmail(userName.text.trim().toString());
                     commonSnackBar('Login Successfully',
                         snackBarBackGroundColor: AppColor.mainColor);
                   } else {

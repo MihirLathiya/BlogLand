@@ -22,4 +22,15 @@ class AppImage {
   static String search = 'assets/svg/Search.svg';
   static String plus = 'assets/svg/plus.svg';
   static String notification = 'assets/svg/notification.svg';
+  static String blog1 = 'assets/images/bolg1.png';
+  static String blog2 = 'assets/images/blog2.png';
+  static String comment = 'assets/svg/comment.svg';
+  static String like = 'assets/svg/like.svg';
+  static String saved = 'assets/svg/saved.svg';
+  static String unlike = 'assets/svg/unlike.svg';
+  static String UnSave = 'assets/svg/UnSave.svg';
+  static String bccNews = 'assets/images/bcc.png';
+  static String noNotification = 'assets/svg/noNotification.svg';
+  static String backButton = 'assets/svg/backButton.svg';
+  static String delete = 'assets/svg/delete.svg';
 }

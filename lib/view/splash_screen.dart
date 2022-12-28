@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:blog_land/prefrence_manager/prefrence_manager.dart';
+import 'package:blog_land/view/bottom_bar.dart';
 import 'package:blog_land/view/on_boarding_screen.dart';
 import 'package:blog_land/widget/imagepath.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,10 @@ class _SplashScreenState extends State<SplashScreen> {
       Duration(seconds: 3),
       () {
         Get.offAll(
-          () => OnBoardingScreen(),
+          () => PreferenceManager.getEmail() == null ||
+                  PreferenceManager.getEmail() == ''
+              ? OnBoardingScreen()
+              : AppBottomBar(),
         );
       },
     );

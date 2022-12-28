@@ -38,7 +38,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   flutter_svg: ^1.1.6
-  stylish_bottom_bar: ^0.1.5
+  get_storage: ^2.0.3
+  flutter_slidable: ^0.6.0
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:

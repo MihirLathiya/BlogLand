@@ -16,7 +16,7 @@ class CommonText extends StatelessWidget {
       {super.key,
       required this.text,
       this.size = 15,
-      this.color,
+      this.color = const Color(0xff0D253C),
       this.weight,
       this.height,
       this.family = 'Avenir',
