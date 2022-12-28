@@ -33,4 +33,6 @@ class AppImage {
   static String noNotification = 'assets/svg/noNotification.svg';
   static String backButton = 'assets/svg/backButton.svg';
   static String delete = 'assets/svg/delete.svg';
+  static String setting = 'assets/svg/Setting.svg';
+  static String userImage = 'assets/images/userImage.png';
 }

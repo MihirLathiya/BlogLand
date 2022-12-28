@@ -1,5 +1,6 @@
 import 'package:blog_land/controller/bottom_bar_controller.dart';
 import 'package:blog_land/view/home_screen/home_screen.dart';
+import 'package:blog_land/view/profile_screen/profile_screen.dart';
 import 'package:blog_land/widget/app_color.dart';
 import 'package:blog_land/widget/common_text.dart';
 import 'package:blog_land/widget/imagepath.dart';
@@ -30,9 +31,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
     Container(
       color: Colors.green,
     ),
-    Container(
-      color: Colors.yellow,
-    ),
+    ProfileScreen(),
     Container(
       color: Colors.blue,
     ),

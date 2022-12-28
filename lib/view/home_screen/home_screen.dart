@@ -187,6 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   physics: BouncingScrollPhysics(),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       ...List.generate(
                         5,
@@ -233,115 +234,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: 4,
                   itemBuilder: (context, index) {
-                    return Container(
-                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                      margin: EdgeInsets.symmetric(horizontal: 26 * size),
-                      height: 150 * size,
-                      width: Get.width,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(26 * size),
-                          bottom: Radius.circular(26 * size),
-                        ),
-                      ),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            AppImage.blog2,
-                            width: 105 * size,
-                            fit: BoxFit.cover,
-                          ),
-                          SizedBox(width: 10 * size),
-                          Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                CommonText(
-                                  text:
-                                      'Wow! USA Develops New Way Of Faster and More',
-                                  size: 15 * font,
-                                  maxLine: 2,
-                                  overFlow: TextOverflow.ellipsis,
-                                  weight: FontWeight.w800,
-                                ),
-                                Row(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(1000),
-                                      child: Image.asset(
-                                        AppImage.bccNews,
-                                        height: 30 * size,
-                                        width: 30 * size,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10 * size),
-                                    CommonText(
-                                      text: 'BCC News',
-                                      size: 10 * font,
-                                      maxLine: 1,
-                                      overFlow: TextOverflow.ellipsis,
-                                      weight: FontWeight.w800,
-                                    ),
-                                    SizedBox(width: 10 * size),
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 9 * size, vertical: 2),
-                                      alignment: Alignment.center,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(6 * size),
-                                        border: Border.all(
-                                            color: AppColor.textColor),
-                                      ),
-                                      child: CommonText(
-                                        text: 'Health',
-                                        size: 10 * font,
-                                        weight: FontWeight.w800,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                      AppImage.like,
-                                      height: 18 * size,
-                                      width: 18 * size,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    SizedBox(width: 10 * size),
-                                    CommonText(
-                                      text: '366K',
-                                      size: 12 * font,
-                                    ),
-                                    SizedBox(width: 10 * size),
-                                    SvgPicture.asset(
-                                      AppImage.comment,
-                                      height: 18 * size,
-                                      width: 18 * size,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    SizedBox(width: 10 * size),
-                                    CommonText(
-                                      text: '366K',
-                                      size: 12 * font,
-                                    ),
-                                    Spacer(),
-                                    SvgPicture.asset(
-                                      AppImage.saved,
-                                      height: 18 * size,
-                                      width: 18 * size,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    SizedBox(width: 10 * size),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                    return Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 26 * size),
+                      child: blogDetails(size, font),
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) {
@@ -357,6 +252,115 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+}
+
+Container blogDetails(double size, double font) {
+  return Container(
+    clipBehavior: Clip.antiAliasWithSaveLayer,
+    height: 150 * size,
+    width: Get.width,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(26 * size),
+        bottom: Radius.circular(26 * size),
+      ),
+    ),
+    child: Row(
+      children: [
+        Image.asset(
+          AppImage.blog2,
+          width: 105 * size,
+          fit: BoxFit.cover,
+        ),
+        SizedBox(width: 10 * size),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CommonText(
+                text: 'Wow! USA Develops New Way Of Faster and More',
+                size: 15 * font,
+                maxLine: 2,
+                overFlow: TextOverflow.ellipsis,
+                weight: FontWeight.w800,
+              ),
+              Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(1000),
+                    child: Image.asset(
+                      AppImage.bccNews,
+                      height: 30 * size,
+                      width: 30 * size,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SizedBox(width: 10 * size),
+                  CommonText(
+                    text: 'BCC News',
+                    size: 10 * font,
+                    maxLine: 1,
+                    overFlow: TextOverflow.ellipsis,
+                    weight: FontWeight.w800,
+                  ),
+                  SizedBox(width: 10 * size),
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 9 * size, vertical: 2),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6 * size),
+                      border: Border.all(color: AppColor.textColor),
+                    ),
+                    child: CommonText(
+                      text: 'Health',
+                      size: 10 * font,
+                      weight: FontWeight.w800,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  SvgPicture.asset(
+                    AppImage.like,
+                    height: 18 * size,
+                    width: 18 * size,
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(width: 10 * size),
+                  CommonText(
+                    text: '366K',
+                    size: 12 * font,
+                  ),
+                  SizedBox(width: 10 * size),
+                  SvgPicture.asset(
+                    AppImage.comment,
+                    height: 18 * size,
+                    width: 18 * size,
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(width: 10 * size),
+                  CommonText(
+                    text: '366K',
+                    size: 12 * font,
+                  ),
+                  Spacer(),
+                  SvgPicture.asset(
+                    AppImage.saved,
+                    height: 18 * size,
+                    width: 18 * size,
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(width: 10 * size),
+                ],
+              ),
+            ],
+          ),
+        )
+      ],
+    ),
+  );
 }
 
 Container FeaturedData(double size, double font) {
