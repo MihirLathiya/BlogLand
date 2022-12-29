@@ -6,5 +6,6 @@ class AppColor {
   static Color darkBlueColor = Color(0xff2D4379);
   static Color textColor = Color(0xff2D4379);
   static Color whiteColor = Color(0xffffffff);
+  static Color blackColor = Colors.black;
   static Color transparent = Colors.transparent;
 }

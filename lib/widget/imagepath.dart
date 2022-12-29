@@ -39,4 +39,13 @@ class AppImage {
   static String Calender = 'assets/svg/Calender.svg';
   static String Upload = 'assets/svg/Upload.svg';
   static String addDone = 'assets/svg/addDone.svg';
+  static String fav = 'assets/images/fav.svg';
+  static String unFav = 'assets/images/unFav.svg';
+  static String FAQ = 'assets/svg/FAQ Circle.svg';
+  static String Profile = 'assets/svg/Profile.svg';
+  static String Notification1 = 'assets/svg/Notification1.svg';
+  static String Logout = 'assets/svg/Logout.svg';
+  static String Lock = 'assets/svg/Lock.svg';
+  static String Group = 'assets/svg/Group 5.svg';
+  static String arrow3 = 'assets/svg/Arrow - Down 3.svg';
 }

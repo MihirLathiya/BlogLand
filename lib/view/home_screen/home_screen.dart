@@ -1,4 +1,5 @@
 import 'package:blog_land/controller/home_screen_controller.dart';
+import 'package:blog_land/view/add_blog/view_blog_information.dart';
 import 'package:blog_land/view/home_screen/featured_view.dart';
 import 'package:blog_land/view/notification/notification_screen.dart';
 import 'package:blog_land/widget/app_color.dart';
@@ -84,45 +85,77 @@ class _HomeScreenState extends State<HomeScreen> {
                             onTap: () {},
                             child: Column(
                               children: [
-                                Container(
-                                  margin: EdgeInsets.only(
-                                      right: 10 * size,
-                                      left: index == 0 ? 26 * size : 0),
-                                  height: 68 * size,
-                                  width: 68 * size,
-                                  padding: EdgeInsets.all(7 * size),
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(24 * size),
-                                    border:
-                                        Border.all(color: AppColor.mainColor),
-                                  ),
-                                  child: Container(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(18 * size),
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xff376AED),
-                                          Color(0xff49B0E2),
-                                          Color(0xff9CECFB),
-                                        ],
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
+                                Stack(
+                                  alignment: Alignment.bottomRight,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                          right: 10 * size,
+                                          left: index == 0 ? 26 * size : 0),
+                                      height: 68 * size,
+                                      width: 68 * size,
+                                      padding: EdgeInsets.all(7 * size),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(24 * size),
+                                        border: Border.all(
+                                            color: AppColor.mainColor),
+                                      ),
+                                      child: Container(
+                                        clipBehavior:
+                                            Clip.antiAliasWithSaveLayer,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(18 * size),
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              Color(0xff376AED),
+                                              Color(0xff49B0E2),
+                                              Color(0xff9CECFB),
+                                            ],
+                                            begin: Alignment.topCenter,
+                                            end: Alignment.bottomCenter,
+                                          ),
+                                        ),
+                                        child: index == 0
+                                            ? Icon(
+                                                Icons.add,
+                                                color: AppColor.whiteColor,
+                                                size: 30 * size,
+                                              )
+                                            : Image.asset(
+                                                AppImage.image1,
+                                                fit: BoxFit.cover,
+                                              ),
                                       ),
                                     ),
-                                    child: index == 0
-                                        ? Icon(
-                                            Icons.add,
-                                            color: AppColor.whiteColor,
-                                            size: 30 * size,
-                                          )
-                                        : Image.asset(
-                                            AppImage.image1,
-                                            fit: BoxFit.cover,
+                                    if (index != 0)
+                                      Positioned(
+                                        right: 10,
+                                        child: Container(
+                                          height: 25 * size,
+                                          width: 25 * size,
+                                          padding: EdgeInsets.all(3),
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: AppColor.whiteColor),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Color(0xffFE9063),
+                                            ),
+                                            child: Center(
+                                              child: SvgPicture.asset(
+                                                AppImage.like,
+                                                height: 11 * size,
+                                                width: 11 * size,
+                                                color: AppColor.whiteColor,
+                                              ),
+                                            ),
                                           ),
-                                  ),
+                                        ),
+                                      )
+                                  ],
                                 ),
                                 SizedBox(height: 5 * size),
                                 Align(
@@ -142,13 +175,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 SizedBox(height: 20 * size),
-                heading(
-                  font: size,
-                  buttonName: 'More',
-                  onPress: () {
-                    Get.to(() => FeaturedView());
-                  },
-                  title: 'Featured',
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 26 * size),
+                  child: heading(
+                    font: size,
+                    buttonName: 'More',
+                    onPress: () {
+                      Get.to(() => FeaturedView());
+                    },
+                    title: 'Featured',
+                  ),
                 ),
 
                 /// FEATURE VIEW
@@ -174,11 +210,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 SizedBox(height: 20 * size),
-                heading(
-                  font: size,
-                  buttonName: 'More',
-                  onPress: () {},
-                  title: 'Latest Blogs',
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 26 * size),
+                  child: heading(
+                    font: size,
+                    buttonName: 'More',
+                    onPress: () {},
+                    title: 'Latest Blogs',
+                  ),
                 ),
                 SizedBox(height: 10 * size),
 
@@ -324,8 +363,8 @@ Container blogDetails(double size, double font) {
                 children: [
                   SvgPicture.asset(
                     AppImage.like,
-                    height: 18 * size,
-                    width: 18 * size,
+                    height: 16 * size,
+                    width: 16 * size,
                     fit: BoxFit.cover,
                   ),
                   SizedBox(width: 10 * size),
@@ -336,8 +375,8 @@ Container blogDetails(double size, double font) {
                   SizedBox(width: 10 * size),
                   SvgPicture.asset(
                     AppImage.comment,
-                    height: 18 * size,
-                    width: 18 * size,
+                    height: 016 * size,
+                    width: 16 * size,
                     fit: BoxFit.cover,
                   ),
                   SizedBox(width: 10 * size),
@@ -348,8 +387,8 @@ Container blogDetails(double size, double font) {
                   Spacer(),
                   SvgPicture.asset(
                     AppImage.saved,
-                    height: 18 * size,
-                    width: 18 * size,
+                    height: 16 * size,
+                    width: 16 * size,
                     fit: BoxFit.cover,
                   ),
                   SizedBox(width: 10 * size),
@@ -407,7 +446,9 @@ Container FeaturedData(double size, double font) {
             color: AppColor.mainColor,
             height: 24 * size,
             width: 80 * size,
-            onPress: () {},
+            onPress: () {
+              Get.to(() => ViewBlogInformationScreen());
+            },
             radius: 6 * size,
             text: 'Read More',
             textColor: AppColor.whiteColor,
@@ -420,26 +461,23 @@ Container FeaturedData(double size, double font) {
 }
 
 Widget heading({String? title, String? buttonName, onPress, double? font}) {
-  return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 26 * font!),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        CommonText(
-          text: title!,
-          size: 16 * font,
-          weight: FontWeight.w800,
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      CommonText(
+        text: title!,
+        size: 16 * font!,
+        weight: FontWeight.w800,
+      ),
+      TextButton(
+        onPressed: onPress,
+        child: CommonText(
+          text: buttonName!,
+          size: 14 * font,
+          weight: FontWeight.w500,
+          color: AppColor.mainColor,
         ),
-        TextButton(
-          onPressed: onPress,
-          child: CommonText(
-            text: buttonName!,
-            size: 14 * font,
-            weight: FontWeight.w500,
-            color: AppColor.mainColor,
-          ),
-        )
-      ],
-    ),
+      )
+    ],
   );
 }

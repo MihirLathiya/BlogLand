@@ -441,34 +441,34 @@ class _AddBlogScreenState extends State<AddBlogScreen> {
       ),
     );
   }
+}
 
-  TextFormField buildTextFormField(
-      {TextEditingController? textEditingController,
-      String? hintText,
-      void Function(String)? onSubmit,
-      TextInputAction? textInputAction,
-      int maxLine = 1}) {
-    return TextFormField(
-      style: TextStyle(fontFamily: 'Avenir', fontWeight: FontWeight.w500),
-      textInputAction: textInputAction,
-      maxLines: maxLine,
-      onFieldSubmitted: onSubmit,
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: TextStyle(color: Color(0xffD9DFEB)),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: Color(0xffD9DFEB),
-          ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: Color(0xffD9DFEB),
-          ),
+TextFormField buildTextFormField(
+    {TextEditingController? textEditingController,
+    String? hintText,
+    void Function(String)? onSubmit,
+    TextInputAction? textInputAction,
+    int maxLine = 1}) {
+  return TextFormField(
+    style: TextStyle(fontFamily: 'Avenir', fontWeight: FontWeight.w500),
+    textInputAction: textInputAction,
+    maxLines: maxLine,
+    onFieldSubmitted: onSubmit,
+    decoration: InputDecoration(
+      hintText: hintText,
+      hintStyle: TextStyle(color: Color(0xffD9DFEB)),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(
+          color: Color(0xffD9DFEB),
         ),
       ),
-    );
-  }
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(
+          color: Color(0xffD9DFEB),
+        ),
+      ),
+    ),
+  );
 }

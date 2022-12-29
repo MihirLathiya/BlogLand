@@ -1,5 +1,6 @@
 import 'package:blog_land/controller/profile_controller.dart';
 import 'package:blog_land/view/home_screen/home_screen.dart';
+import 'package:blog_land/view/profile_screen/settings/setting_screen.dart';
 import 'package:blog_land/widget/app_color.dart';
 import 'package:blog_land/widget/common_text.dart';
 import 'package:blog_land/widget/imagepath.dart';
@@ -42,7 +43,9 @@ class _ProfileScreenState extends State<ProfileScreen>
         actions: [
           IconButton(
             splashRadius: 20,
-            onPressed: () {},
+            onPressed: () {
+              Get.to(()=>SettingScreen());
+            },
             icon: SvgPicture.asset(
               AppImage.setting,
             ),
