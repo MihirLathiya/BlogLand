@@ -35,4 +35,8 @@ class AppImage {
   static String delete = 'assets/svg/delete.svg';
   static String setting = 'assets/svg/Setting.svg';
   static String userImage = 'assets/images/userImage.png';
+  static String arrowDown = 'assets/svg/Arrow - Down.svg';
+  static String Calender = 'assets/svg/Calender.svg';
+  static String Upload = 'assets/svg/Upload.svg';
+  static String addDone = 'assets/svg/addDone.svg';
 }
